@@ -7,7 +7,7 @@ ENV LANGUAGE en_US.UTF-8
 ENV LC_ALL en_US.UTF-8
 
 ENV XYZ 1024x768x24
-ENV TZ "Asia/Shanghai"
+ENV TZ "America/Los_Angeles"
 ENV VNC_PW "vncpassword"
 ENV DISPLAY :0
 
@@ -30,7 +30,7 @@ RUN  apt-get upgrade --yes && \
          apt-get autoclean && \
          apt-get autoremove && \
          rm -rf /var/lib/apt/lists/*
-RUN sed -i 's/archive.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list
+         
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 COPY myrun /usr/bin/myrun
 RUN chmod +x /usr/bin/myrun
