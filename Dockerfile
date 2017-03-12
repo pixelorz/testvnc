@@ -30,7 +30,7 @@ RUN  apt-get upgrade --yes && \
          apt-get autoclean && \
          apt-get autoremove && \
          rm -rf /var/lib/apt/lists/*
-         
+RUN sed -i 's/archive.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 COPY myrun /usr/bin/myrun
 RUN chmod +x /usr/bin/myrun
