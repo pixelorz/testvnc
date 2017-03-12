@@ -21,7 +21,7 @@ RUN apt-get -qqy --no-install-recommends install \
     language-pack-zh-hans \
     ttf-wqy-microhei
     
-RUN apt-get -y install xvfb x11vnc fluxbox xdotool ca-certificates && \
+RUN apt-get -y install xfce4 xfce4-goodies x11vnc xvfb ca-certificates && \
          mkdir ~/.vnc && \
          touch ~/.vnc/passwd
 RUN x11vnc -storepasswd $VNC_PW ~/.vnc/passwd
